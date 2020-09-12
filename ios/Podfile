@@ -8,6 +8,8 @@ target 'letsPartyApp' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'react-native-app-auth', :path => '../node_modules/react-native-app-auth'
+
   target 'letsPartyAppTests' do
     inherit! :complete
     # Pods for testing
