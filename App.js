@@ -3,11 +3,11 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Login from './Views/Login';
-import Dashboard from './Views/Dashboard';
-import LiveParty from './Views/LiveParty';
-import Messages from './Views/Messages';
-import SocialRoom from './Views/SocialRoom';
+import Login from './Project/Views/Login';
+import Dashboard from './Project/Views/Dashboard';
+import LiveParty from './Project/Views/LiveParty';
+import Messages from './Project/Views/Messages';
+import SocialRoom from './Project/Views/SocialRoom';
 
 const Stack = createStackNavigator();
 const screenOptions = {
@@ -16,12 +16,14 @@ const screenOptions = {
 
 export default App = () => {
   return (
-    <NavigationContainer screenOptions={screenOptions} initialRouteName='Login'>
-      <Stack.Navigator name='login' component={Login} />
-      <Stack.Navigator name='home' component={Dashboard} />
-      <Stack.Navigator name='live-party' component={LiveParty} />
-      <Stack.Navigator name='social-room' component={SocialRoom} />
-      <Stack.Navigator name='messages' component={Messages} />
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={screenOptions} initialRouteName='Login'>
+        <Stack.Screen name='Login' component={Login} />
+        <Stack.Screen name='Dashboard' component={Dashboard} />
+        <Stack.Screen name='LiveParty' component={LiveParty} />
+        <Stack.Screen name='SocialRoom' component={SocialRoom} />
+        <Stack.Screen name='Messages' component={Messages} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
